@@ -1,1 +1,0 @@
-web: java -jar target/tabata-backend-2.0-SNAPSHOT.jar

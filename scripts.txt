@@ -1,0 +1,13 @@
+CREATE USER tabata WITH ENCRYPTED PASSWORD 'tabata';
+
+CREATE database tabata_repository;
+
+GRANT ALL PRIVILEGES ON database tabata_repository TO tabata;
+
+#export table to csv (in pgadmin)
+COPY (select * from muscle_group) TO 'D:\Muscles.csv'
+   DELIMITER ',' CSV HEADER;
+
+#import table
+heroku pg:psql
+\copy muscle_group FROM 'D:\Muscles.csv' DELIMITER ',' CSV HEADER
