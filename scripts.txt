@@ -11,3 +11,4 @@ COPY (select * from muscle_group) TO 'D:\Muscles.csv'
 #import table
 heroku pg:psql
 \copy muscle_group FROM 'D:\Muscles.csv' DELIMITER ',' CSV HEADER
+\copy exercise FROM 'D:\Exercises.csv' DELIMITER ',' CSV HEADER
