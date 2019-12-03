@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping(UrlConst.PATH_EXERCISES)
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@CrossOrigin
 public class ExerciseController {
 
     private final ExerciseService exerciseService;
