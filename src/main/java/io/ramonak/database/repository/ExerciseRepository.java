@@ -18,4 +18,6 @@ public interface ExerciseRepository extends CrudRepository<Exercise, Long> {
     List<Long> getAllIdsForMuscleGroup(@Param("muscleGroupName") String muscleGroupName);
 
     List<Exercise> findAllByIdIn(List<Long> ids);
+
+    List<Exercise> findAllByMuscleGroup_Name(String muscleGroupName);
 }

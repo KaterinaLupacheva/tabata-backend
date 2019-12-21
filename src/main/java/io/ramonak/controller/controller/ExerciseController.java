@@ -32,6 +32,12 @@ public class ExerciseController {
         return new ResponseEntity<>(exerciseService.getRandomExercises(numOfExercises, muscleGroup), HttpStatus.OK);
     }
 
+    @GetMapping("/{muscleGroup}")
+    public ResponseEntity<List<ExerciseDTO>> getExercisesForMuscleGroup(
+            @PathVariable("muscleGroup") String muscleGroup) {
+        return new ResponseEntity<>(exerciseService.getExercisesForMuscleGroup(muscleGroup), HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<ExerciseDTO> saveExercise(@RequestBody ExerciseDTO exerciseDTO) {
         return new ResponseEntity<>(exerciseService.saveExercise(exerciseDTO), HttpStatus.CREATED);

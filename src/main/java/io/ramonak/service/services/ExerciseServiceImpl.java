@@ -76,6 +76,14 @@ public class ExerciseServiceImpl implements ExerciseService {
         return result;
     }
 
+    @Override
+    public List<ExerciseDTO> getExercisesForMuscleGroup(String muscleGroup) {
+        return exerciseRepository.findAllByMuscleGroup_Name(muscleGroup)
+                .stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
     private Exercise convertToEntity(ExerciseDTO exerciseDTO) {
         Exercise exercise = modelMapper.map(exerciseDTO, Exercise.class);
         muscleGroupRepository.findAllByName(exerciseDTO.getMuscleGroupName()).ifPresent(exercise::setMuscleGroup);

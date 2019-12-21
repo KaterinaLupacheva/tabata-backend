@@ -12,4 +12,5 @@ public interface ExerciseService {
     List<ExerciseDTO> getAllExercises();
     void deleteExercise(ExerciseDTO exerciseDTO);
     List<ExerciseDTO> getRandomExercises(Integer numOfExercises, String muscleGroup);
+    List<ExerciseDTO> getExercisesForMuscleGroup(String muscleGroup);
 }
