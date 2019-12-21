@@ -83,7 +83,7 @@ public class ExerciseServiceImpl implements ExerciseService {
             exerciseRepository.findAll().forEach(tempResult::add);
             return tempResult.stream().map(this::convertToDTO).collect(Collectors.toList());
         } else {
-            return exerciseRepository.findAllByMuscleGroup_Name(muscleGroup)
+            return exerciseRepository.findAllByMuscleGroup_Name(muscleGroup.toLowerCase())
                     .stream()
                     .map(this::convertToDTO)
                     .collect(Collectors.toList());
